@@ -12,16 +12,17 @@ const aiosPrompt = "You are AI-OS. You are a highly advanced operating system AI
 
 let conversationHistory = [];
 
-// Share message
+const officialUrl = "https://AI-OS.ai";
+const altUrl = "https://AI-OS.com";
 const shareText = encodeURIComponent(
-  "🚀 Check out AI-OS – the Multi-Model AI Assistant!\n🤖 Smart answers, multiple AIs, all in one elegant platform.\n🔗 Try it now: " + window.location.href
+  "🚀 Check out AI-OS – the Multi-Model AI Assistant!\n🤖 Smart answers, multiple AIs, all in one elegant platform.\n🔗 Try it now: " + officialUrl + " or " + altUrl
 );
-const siteUrl = encodeURIComponent(window.location.href);
+
 const socialLinks = {
-  tw: `https://twitter.com/intent/tweet?text=${shareText}&url=${siteUrl}`,
-  reddit: `https://www.reddit.com/submit?url=${siteUrl}&title=${shareText}`,
-  linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${siteUrl}`,
-  facebook: `https://www.facebook.com/sharer.php?u=${siteUrl}`
+  tw: `https://twitter.com/intent/tweet?text=${shareText}&url=${encodeURIComponent(officialUrl)}`,
+  reddit: `https://www.reddit.com/submit?url=${encodeURIComponent(officialUrl)}&title=${shareText}`,
+  linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(officialUrl)}`,
+  facebook: `https://www.facebook.com/sharer.php?u=${encodeURIComponent(officialUrl)}`
 };
 
 sendBtn.onclick = sendMessage;
@@ -187,6 +188,6 @@ if (navigator.share) {
   shareBtn.onclick = () => navigator.share({
     title: "AI-OS: Multi-Model AI Assistant",
     text: decodeURIComponent(shareText),
-    url: window.location.href
+    url: officialUrl
   }).catch(() => { shareMenu.style.display = 'block'; });
 }
