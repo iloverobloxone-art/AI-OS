@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AI-OS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="chat-container">
+    <h1>AI-OS: Multi-Model AI Assistant</h1>
+    <label for="model">Choose Model:</label>
+    <select id="model">
+      <option value="openai">ChatGPT (OpenAI)</option>
+      <option value="claude">Claude (Anthropic)</option>
+      <option value="perplexity">Perplexity</option>
+      <option value="gemini">Gemini (Google)</option>
+      <option value="aios">AI-OS Persona</option>
+    </select>
+
+    <label for="apikey">API Key:</label>
+    <input type="password" id="apikey" placeholder="Enter API Key">
+
+    <div id="chat"></div>
+
+    <input type="text" id="userInput" placeholder="Type your message…" autofocus/>
+    <button onclick="sendMessage()">Send</button>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
