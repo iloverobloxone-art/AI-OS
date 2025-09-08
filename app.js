@@ -5,11 +5,24 @@ const apikeyInput = document.getElementById('apikey');
 const sendBtn = document.getElementById('sendBtn');
 const historyEl = document.getElementById('history');
 const newChatBtn = document.getElementById('newChat');
+const shareBtn = document.getElementById('shareBtn');
+const shareMenu = document.getElementById('shareMenu');
 
-// Persona/system message for AI-OS agent
 const aiosPrompt = "You are AI-OS. You are a highly advanced operating system AI assistant. Speak in a helpful, friendly, efficient, and slightly witty tone. Always begin responses with 'AI-OS here:'.";
 
 let conversationHistory = [];
+
+// Share message
+const shareText = encodeURIComponent(
+  "🚀 Check out AI-OS – the Multi-Model AI Assistant!\n🤖 Smart answers, multiple AIs, all in one elegant platform.\n🔗 Try it now: " + window.location.href
+);
+const siteUrl = encodeURIComponent(window.location.href);
+const socialLinks = {
+  tw: `https://twitter.com/intent/tweet?text=${shareText}&url=${siteUrl}`,
+  reddit: `https://www.reddit.com/submit?url=${siteUrl}&title=${shareText}`,
+  linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${siteUrl}`,
+  facebook: `https://www.facebook.com/sharer.php?u=${siteUrl}`
+};
 
 sendBtn.onclick = sendMessage;
 userInput.addEventListener("keydown", e => { if (e.key === "Enter") sendMessage(); });
@@ -156,4 +169,24 @@ function appendMsg(role, text) {
   div.textContent = role === "user" ? text : text;
   chat.appendChild(div);
   chat.scrollTop = chat.scrollHeight;
+}
+
+// Share button logic
+shareBtn.onclick = () => {
+  shareMenu.style.display = 'block';
+};
+
+document.querySelector('.social-btn.linkedin').onclick = () => window.open(socialLinks.linkedin, '_blank');
+document.querySelector('.social-btn.reddit').onclick = () => window.open(socialLinks.reddit, '_blank');
+document.querySelector('.social-btn.facebook').onclick = () => window.open(socialLinks.facebook, '_blank');
+document.querySelector('.social-btn.tw').onclick = () => window.open(socialLinks.tw, '_blank');
+document.querySelector('.social-btn.close').onclick = () => shareMenu.style.display = 'none';
+
+// Web Share API fallback for supported browsers
+if (navigator.share) {
+  shareBtn.onclick = () => navigator.share({
+    title: "AI-OS: Multi-Model AI Assistant",
+    text: decodeURIComponent(shareText),
+    url: window.location.href
+  }).catch(() => { shareMenu.style.display = 'block'; });
 }
