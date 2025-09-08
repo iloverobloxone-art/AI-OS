@@ -1,4 +1,3 @@
 ### AI-OS
-##This is AI-OS
-#This is stil in testing
+This is AI-OS, this is stil in testing
 Enjoy! 😊
