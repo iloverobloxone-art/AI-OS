@@ -6,24 +6,32 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="chat-container">
-    <h1>AI-OS: Multi-Model AI Assistant</h1>
-    <label for="model">Choose Model:</label>
-    <select id="model">
-      <option value="openai">ChatGPT (OpenAI)</option>
-      <option value="claude">Claude (Anthropic)</option>
-      <option value="perplexity">Perplexity</option>
-      <option value="gemini">Gemini (Google)</option>
-      <option value="aios">AI-OS Persona</option>
-    </select>
-
-    <label for="apikey">API Key:</label>
-    <input type="password" id="apikey" placeholder="Enter API Key">
-
+  <div class="sidebar">
+    <h2>AI-OS</h2>
+    <nav>
+      <ul>
+        <li><span id="newChat">+ New Chat</span></li>
+        <li class="history-title">Recent Conversations</li>
+        <ul id="history"></ul>
+      </ul>
+    </nav>
+  </div>
+  <div class="main">
+    <div class="chat-header">
+      <select id="model">
+        <option value="openai">ChatGPT (OpenAI)</option>
+        <option value="claude">Claude (Anthropic)</option>
+        <option value="perplexity">Perplexity</option>
+        <option value="gemini">Gemini (Google)</option>
+        <option value="aios">AI-OS Persona</option>
+      </select>
+      <input type="password" id="apikey" placeholder="API Key">
+    </div>
     <div id="chat"></div>
-
-    <input type="text" id="userInput" placeholder="Type your message…" autofocus/>
-    <button onclick="sendMessage()">Send</button>
+    <div class="chat-input-area">
+      <input type="text" id="userInput" placeholder="Ask AI-OS anything..." autofocus/>
+      <button id="sendBtn">Send</button>
+    </div>
   </div>
   <script src="app.js"></script>
 </body>
