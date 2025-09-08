@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>AI-OS</title>
+  <title>AI-OS: Multi-Model AI Assistant</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -33,6 +33,29 @@
       <button id="sendBtn">Send</button>
     </div>
   </div>
+  <!-- Share Menu & Floating Button -->
+  <div id="shareMenu" class="share-menu">
+    <button class="social-btn linkedin">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn" height="22">LinkedIn
+    </button>
+    <button class="social-btn reddit">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/reddit.svg" alt="Reddit" height="22">Reddit
+    </button>
+    <button class="social-btn facebook">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook" height="22">Facebook
+    </button>
+    <button class="social-btn tw">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/x.svg" alt="X" height="22">X
+    </button>
+    <button class="social-btn close">Close</button>
+  </div>
+  <button id="shareBtn" class="floating-3d-btn">
+    <svg width="24" height="24" fill="none">
+      <path d="M16 8l-4-4-4 4" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="12" cy="16" r="4" fill="#fff" fill-opacity="0.1" stroke="#fff" stroke-width="2"/>
+    </svg>
+    Share
+  </button>
   <script src="app.js"></script>
 </body>
 </html>
