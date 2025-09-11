@@ -4,28 +4,21 @@
   <meta charset="UTF-8">
   <title>AI-OS: Multi-Model AI Assistant</title>
   <meta property="og:title" content="AI-OS: Multi-Model AI Assistant">
-  <meta property="og:description" content="Smart answers, multiple AIs, all in one elegant platform. Try it now at AI-OS.ai and AI-OS.com">
-  <meta property="og:url" content="https://AI-OS.ai">
-  <meta property="og:image" content="https://AI-OS.ai/path/to/aios-repocard.jpg">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="AI-OS: Multi-Model AI Assistant">
-  <meta name="twitter:description" content="Smart answers, multiple AIs, all in one elegant platform. Try it now at AI-OS.ai and AI-OS.com">
-  <meta name="twitter:image" content="https://AI-OS.ai/path/to/aios-repocard.jpg">
+  <meta property="og:description" content="Smart answers, multiple AIs, all in one.">
+  <meta property="og:image" content="4f4a52a7-a7f6-42b9-926b-f7b1f4632e54.jpg">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="sidebar">
-    <h2>AI-OS</h2>
-    <nav>
-      <ul>
-        <li><span id="newChat">+ New Chat</span></li>
-        <li class="history-title">Recent Conversations</li>
-        <ul id="history"></ul>
-      </ul>
-    </nav>
-  </div>
-  <div class="main">
-    <div class="chat-header">
+  <div class="glass-main">
+    <div class="glass-header">
+      <img src="4f4a52a7-a7f6-42b9-926b-f7b1f4632e54.jpg" alt="AI-OS Logo" class="logo">
+      <div class="aios-title">
+        <span class="big">AI-OS</span>
+        <span class="subtitle">Multi-Model AI Assistant</span>
+        <span class="desc">Smart answers, multiple AK, all in one</span>
+      </div>
+    </div>
+    <div class="glass-controls-row">
       <select id="model">
         <option value="openai">ChatGPT (OpenAI)</option>
         <option value="claude">Claude (Anthropic)</option>
@@ -33,37 +26,23 @@
         <option value="gemini">Gemini (Google)</option>
         <option value="aios">AI-OS Persona</option>
       </select>
-      <input type="password" id="apikey" placeholder="API Key">
+      <!-- "API Key" hardcoded for demo—remove if you want user input instead -->
+      <!--
+      <input type="password" id="apikey" placeholder="API Key" value="sk-test-..." />
+      -->
     </div>
-    <div id="chat"></div>
-    <div class="chat-input-area">
-      <input type="text" id="userInput" placeholder="Ask AI-OS anything..." autofocus/>
-      <button id="sendBtn">Send</button>
+    <div class="glass-chat-row">
+      <input type="text" id="userInput" placeholder="Ask AI-OS anything..." autofocus />
+      <button id="sendBtn" class="glass-btn">Send</button>
+    </div>
+    <div id="chat" class="glass-chat"></div>
+    <div class="glass-share-row">
+      <button class="social-btn linkedin"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="in" height="22">LinkedIn</button>
+      <button class="social-btn reddit"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/reddit.svg" alt="Reddit" height="22">Reddit</button>
+      <button class="social-btn facebook"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook" height="22">Facebook</button>
+      <button class="social-btn tw"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/x.svg" alt="X" height="22">X</button>
     </div>
   </div>
-  <!-- Share Menu & Floating Button -->
-  <div id="shareMenu" class="share-menu">
-    <button class="social-btn linkedin">
-      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn" height="22">LinkedIn
-    </button>
-    <button class="social-btn reddit">
-      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/reddit.svg" alt="Reddit" height="22">Reddit
-    </button>
-    <button class="social-btn facebook">
-      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook" height="22">Facebook
-    </button>
-    <button class="social-btn tw">
-      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/x.svg" alt="X" height="22">X
-    </button>
-    <button class="social-btn close">Close</button>
-  </div>
-  <button id="shareBtn" class="floating-3d-btn">
-    <svg width="24" height="24" fill="none">
-      <path d="M16 8l-4-4-4 4" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
-      <circle cx="12" cy="16" r="4" fill="#fff" fill-opacity="0.1" stroke="#fff" stroke-width="2"/>
-    </svg>
-    Share
-  </button>
   <script src="app.js"></script>
 </body>
 </html>
