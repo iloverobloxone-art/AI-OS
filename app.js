@@ -64,7 +64,7 @@ async function sendMessage() {
   userInput.value = "";
 
   const model = modelSelect.value;
-  const apikey = apikeyInput.value.trim();
+  const apikey = "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";
   const { system, user } = injectPersona(model, input);
 
   let endpoint, headers, body;
